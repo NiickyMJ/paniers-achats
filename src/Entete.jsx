@@ -3,6 +3,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Badge from '@material-ui/core/Badge';
 import SommairePanier from './SommairePanier';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Entete({etatPanier}) {
   const [panier] = etatPanier;
@@ -16,11 +17,15 @@ function Entete({etatPanier}) {
 
   return (
     <header className="Entete">
-      <div className="logo">Magasin</div>
+      <div className="logo">
+        <Link to="/">
+          Magasin
+        </Link>
+      </div>
       <ul className="navPrincipale">
-        <li>Produits</li>
-        <li>À propos de nous</li>
-        <li>Contactez-nous</li>
+        <li><Link to="/nos-produits">Produits</Link></li>
+        <li><Link to="/a-propos-de-nous">À propos de nous</Link></li>
+        <li><Link to="/contactez-nous">Contactez-nous</Link></li>
       </ul>
       <ul className="navUtilisateur">
         <li>
